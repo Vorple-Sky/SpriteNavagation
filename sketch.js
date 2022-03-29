@@ -11,7 +11,7 @@
 
 // This is a 'sprite' which we can move
 var ghost;
-var bird;
+var smile;
 var speed = 10;
 
 // The is a static sprite
@@ -27,12 +27,12 @@ function setup() {
 
   // create a sprite with dimensions
   ghost = createSprite(400, 150);
-  bird = createSprite(400, 150);
+  smile = createSprite(400, 150);
 
   // This is a *numbered* sequence of PNG files
   // We add animation to different sprites
   ghost.addAnimation('floating', 'assets/ghost_standing0001.png', 'assets/ghost_standing0007.png');
-  bird.addAnimation('floating', 'assets/blueblob-01.png', 'assets/blublob-05.png');
+  smile.addAnimation('floating', 'floating', 'assets/Smile01_.png', 'assets/Smile04_.png');
   // create a star in the middle of the screen
   //star = createSprite(width/2, height/2);
   //star.addImage('star', starImg);
@@ -60,8 +60,8 @@ function keyPressed() {
   if( key === ' ') {
     ghost.position.x = width/2;
     ghost.position.y = height/2;
-    bird.position.x = width/2;
-    bird.position.y = height/2;
+    smile.position.x = width/2;
+    smile.position.y = height/2;
   }
 }
 
@@ -89,23 +89,23 @@ function checkMovement() {
   } */
   
   if(keyIsDown(RIGHT_ARROW)){
-    bird.velocity.x = speed;
+    smile.velocity.x = speed;
   }
   else if(keyIsDown(LEFT_ARROW)){
-    bird.velocity.x = -speed;
+    smile.velocity.x = -speed;
   }
   else{
-    bird.velocity.x = 0;
+    smile.velocity.x = 0;
   }
 
   if(keyIsDown(DOWN_ARROW)){
-    bird.velocity.y = speed;
+    smile.velocity.y = speed;
   }
   else if(keyIsDown(UP_ARROW)){
-    bird.velocity.y = -speed;
+    smile.velocity.y = -speed;
   }
   else{
-    bird.velocity.y = 0;
+    smile.velocity.y = 0;
   }
 }
 
@@ -117,9 +117,9 @@ function ghostCollision(spriteA, spriteB) {
 
   //spriteB.remove();
 }
-function birdCollision(spriteA, spriteB) {
-  bird.position.x = 100;
-  bird.position.y = 100;
+function smileCollision(spriteA, spriteB) {
+  smile.position.x = 100;
+  smile.position.y = 100;
 
   //spriteB.remove();
 }
